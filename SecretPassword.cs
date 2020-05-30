@@ -8,28 +8,32 @@ namespace Hangman1
 {
     public class SecretPassword
     {
-        public static void Main(String[] args)
-        {
-            List<string> capitol = new List<string>();
-
-            capitol.Add("Prague");
-            capitol.Add("Rome");
-            capitol.Add("Paris");
-            capitol.Add("Berlin");
-            capitol.Add("Warsaw");
-            capitol.Add("Moscow");
-            capitol.Add("Madrid");
-            capitol.Add("Lisbon");
-            capitol.Add("Vienna");
-            capitol.Add("Zagreb");
-
-            Random randcap = new Random();
-            int index = randcap.Next(capitol.Count);
-            string randomString = capitol[index];
-        }
-         
-
         
-      
+        private char[]hashedstring;
+
+        public SecretPassword(string hashedstring)
+        {
+            this.hashedstring = hashedstring.ToCharArray(); 
+
+        }
+
+        internal void Showchar(char keyname, List<int> indexy)
+        {
+            indexy.ForEach(index => hashedstring[index] = keyname);
+        }
+
+        internal void Showcurrentpasswordstate()
+        {
+            Console.WriteLine(new String(hashedstring));
+        }
+
+        internal bool unhushall()
+        {
+            if (hashedstring.Contains('*')) 
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

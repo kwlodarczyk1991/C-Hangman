@@ -8,7 +8,17 @@ namespace Hangman1
 {
    public class HashedPassword
     {
-        HashedPassword hashedpassword = new HashedPassword(); 
+        //public string Hidepassword()
+        //{
+
+            
+        //    Random randcap = new Random();
+        //    int index = randcap.Next(capitols.Count);
+        //    string randomString = capitols[index];
+        //    string hashedstring = new string('*', randomString.Length);
+        //    return hashedstring;
+        //}
+
 
     }
 }
